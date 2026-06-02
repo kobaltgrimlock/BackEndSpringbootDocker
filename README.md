@@ -21,4 +21,4 @@ PostgreSQL Database
 
 Swagger UI can be accessed at:
 
-http://localhost:8080/API Documentation
+API Documentation folder
