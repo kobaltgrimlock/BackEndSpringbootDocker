@@ -1,0 +1,961 @@
+<!doctype html>
+<html>
+  <head>
+    <title>GeneratedAPI_2026-06-03-0032</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+      
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+      
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+      
+      .license-url {
+        margin-left: 20px;
+      }
+      
+      .model {
+        margin: 0 0 0px 20px;
+      }
+      
+      .method {
+        margin-left: 20px;
+      }
+      
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+      
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      
+      .http-method {
+       text-transform: uppercase;
+      }
+      
+      pre.get {
+        background-color: #0f6ab4;
+      }
+      
+      pre.post {
+        background-color: #10a54a;
+      }
+      
+      pre.put {
+        background-color: #c5862b;
+      }
+      
+      pre.delete {
+        background-color: #a41e22;
+      }
+      
+      .huge	{
+      	color: #fff;
+      }
+      
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      code {
+        white-space: pre;
+      }
+      
+      .nickname {
+        font-weight: bold;
+      }
+      
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+      
+      .up {
+        float:right;
+      }
+      
+      .parameter {
+        width: 500px;
+      }
+      
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+      
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+      
+      .param-type {
+        font-style: italic;
+      }
+      
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+      
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+      
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+      
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+      
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+      
+      .param-header {
+        font-weight: bold;
+      }
+      
+      .method-tags {
+        text-align: right;
+      }
+      
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>GeneratedAPI_2026-06-03-0032</h1>
+    <div class="app-desc">This API provides endpoints to manage users, favourites, and resale HDB records. It supports creating, retrieving, updating, and deleting resources with detailed arguments and responses for each operation.</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Favourites">Favourites</a></h4>
+  <ul>
+  <li><a href="#addFavourite"><code><span class="http-method">post</span> /favourites/{userId}/{flatId}</code></a></li>
+  <li><a href="#deleteFavourite"><code><span class="http-method">delete</span> /favourites/{favouriteId}</code></a></li>
+  <li><a href="#getAllFavourites"><code><span class="http-method">get</span> /favourites</code></a></li>
+  <li><a href="#getFavouritesByUser"><code><span class="http-method">get</span> /favourites/user/{userId}</code></a></li>
+  </ul>
+  <h4><a href="#ResaleHdb">ResaleHdb</a></h4>
+  <ul>
+  <li><a href="#createResaleHdb"><code><span class="http-method">post</span> /resale-hdb</code></a></li>
+  <li><a href="#deleteResaleHdb"><code><span class="http-method">delete</span> /resale-hdb/{id}</code></a></li>
+  <li><a href="#getAllResaleHdb"><code><span class="http-method">get</span> /resale-hdb</code></a></li>
+  <li><a href="#getResaleHdbById"><code><span class="http-method">get</span> /resale-hdb/{id}</code></a></li>
+  <li><a href="#updateResaleHdb"><code><span class="http-method">put</span> /resale-hdb/{id}</code></a></li>
+  </ul>
+  <h4><a href="#Users">Users</a></h4>
+  <ul>
+  <li><a href="#createUser"><code><span class="http-method">post</span> /users</code></a></li>
+  <li><a href="#deleteUser"><code><span class="http-method">delete</span> /users/{id}</code></a></li>
+  <li><a href="#getAllUsers"><code><span class="http-method">get</span> /users</code></a></li>
+  <li><a href="#updateUser"><code><span class="http-method">put</span> /users/{id}</code></a></li>
+  </ul>
+
+  <h1><a name="Favourites">Favourites</a></h1>
+  <div class="method"><a name="addFavourite"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /favourites/{userId}/{flatId}</code></pre></div>
+    <div class="method-summary">Add a favourite flat for a user (<span class="nickname">addFavourite</span>)</div>
+    <div class="method-notes">Adds a flat to the favourites list of a specified user.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the user adding the favourite format: int64</div>      <div class="param">flatId (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the flat to be added as favourite format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_201">inline_response_201</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "message" : "Favourite added successfully"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    Favourite added successfully
+        <a href="#inline_response_201">inline_response_201</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteFavourite"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /favourites/{favouriteId}</code></pre></div>
+    <div class="method-summary">Delete a favourite by ID (<span class="nickname">deleteFavourite</span>)</div>
+    <div class="method-notes">Removes a favourite record by its unique ID.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">favouriteId (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the favourite to delete format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200">inline_response_200</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "message" : "Favourite deleted successfully"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Favourite deleted successfully
+        <a href="#inline_response_200">inline_response_200</a>
+    <h4 class="field-label">400</h4>
+    Bad request
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllFavourites"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /favourites</code></pre></div>
+    <div class="method-summary">Retrieve all favourites (<span class="nickname">getAllFavourites</span>)</div>
+    <div class="method-notes">Fetches a list of all favourite records linking users and flats.</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Favourite">Favourite</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "flatId" : 789,
+  "id" : 123,
+  "userId" : 456
+}, {
+  "flatId" : 789,
+  "id" : 123,
+  "userId" : 456
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    A list of favourite records
+        
+    <h4 class="field-label">400</h4>
+    Bad request
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getFavouritesByUser"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /favourites/user/{userId}</code></pre></div>
+    <div class="method-summary">Retrieve favourites by user (<span class="nickname">getFavouritesByUser</span>)</div>
+    <div class="method-notes">Fetches all favourite flats for a specific user.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the user whose favourites are to be retrieved format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#FavouriteDTO">FavouriteDTO</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "flatName" : "Block 123, Street ABC",
+  "addedDate" : "2026-05-01T14:30:00Z",
+  "flatId" : 789
+}, {
+  "flatName" : "Block 123, Street ABC",
+  "addedDate" : "2026-05-01T14:30:00Z",
+  "flatId" : 789
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    List of favourite flats for the user
+        
+    <h4 class="field-label">400</h4>
+    Bad request
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="ResaleHdb">ResaleHdb</a></h1>
+  <div class="method"><a name="createResaleHdb"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /resale-hdb</code></pre></div>
+    <div class="method-summary">Create a new resale HDB record (<span class="nickname">createResaleHdb</span>)</div>
+    <div class="method-notes">Creates a new resale HDB record with validated details.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#ResaleHdb">ResaleHdb</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ResaleHdb">ResaleHdb</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "streetName" : "Example Street",
+  "resalePrice" : 350000,
+  "block" : "123A",
+  "flatType" : "4-room",
+  "resaleDate" : "2026-04-15T00:00:00.000+00:00",
+  "id" : 101,
+  "floorArea" : 90.5
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    Resale HDB record created successfully
+        <a href="#ResaleHdb">ResaleHdb</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteResaleHdb"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /resale-hdb/{id}</code></pre></div>
+    <div class="method-summary">Delete a resale HDB record (<span class="nickname">deleteResaleHdb</span>)</div>
+    <div class="method-notes">Deletes a resale HDB record by its ID.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the resale HDB record to delete format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    Resale HDB record deleted successfully, no content returned
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllResaleHdb"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /resale-hdb</code></pre></div>
+    <div class="method-summary">Retrieve all resale HDB records (<span class="nickname">getAllResaleHdb</span>)</div>
+    <div class="method-notes">Fetches a list of all resale HDB records.</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ResaleHdb">ResaleHdb</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "streetName" : "Example Street",
+  "resalePrice" : 350000,
+  "block" : "123A",
+  "flatType" : "4-room",
+  "resaleDate" : "2026-04-15T00:00:00.000+00:00",
+  "id" : 101,
+  "floorArea" : 90.5
+}, {
+  "streetName" : "Example Street",
+  "resalePrice" : 350000,
+  "block" : "123A",
+  "flatType" : "4-room",
+  "resaleDate" : "2026-04-15T00:00:00.000+00:00",
+  "id" : 101,
+  "floorArea" : 90.5
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    List of resale HDB records
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getResaleHdbById"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /resale-hdb/{id}</code></pre></div>
+    <div class="method-summary">Retrieve a resale HDB record by ID (<span class="nickname">getResaleHdbById</span>)</div>
+    <div class="method-notes">Fetches a single resale HDB record by its unique ID.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the resale HDB record format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ResaleHdb">ResaleHdb</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "streetName" : "Example Street",
+  "resalePrice" : 350000,
+  "block" : "123A",
+  "flatType" : "4-room",
+  "resaleDate" : "2026-04-15T00:00:00.000+00:00",
+  "id" : 101,
+  "floorArea" : 90.5
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Resale HDB record found
+        <a href="#ResaleHdb">ResaleHdb</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateResaleHdb"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /resale-hdb/{id}</code></pre></div>
+    <div class="method-summary">Update a resale HDB record (<span class="nickname">updateResaleHdb</span>)</div>
+    <div class="method-notes">Updates details of a resale HDB record by ID.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the resale HDB record to update format: int64</div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#ResaleHdb">ResaleHdb</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ResaleHdb">ResaleHdb</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "streetName" : "Example Street",
+  "resalePrice" : 350000,
+  "block" : "123A",
+  "flatType" : "4-room",
+  "resaleDate" : "2026-04-15T00:00:00.000+00:00",
+  "id" : 101,
+  "floorArea" : 90.5
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Resale HDB record updated successfully
+        <a href="#ResaleHdb">ResaleHdb</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Users">Users</a></h1>
+  <div class="method"><a name="createUser"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /users</code></pre></div>
+    <div class="method-summary">Create a new user (<span class="nickname">createUser</span>)</div>
+    <div class="method-notes">Creates a new HDB user with validated user details.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#HDBUser">HDBUser</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#HDBUser">HDBUser</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "phoneNumber" : "+6512345678",
+  "fullName" : "John Doe",
+  "id" : 456,
+  "email" : "johndoe@example.com",
+  "username" : "johndoe"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    User created successfully
+        <a href="#HDBUser">HDBUser</a>
+    <h4 class="field-label">400</h4>
+    Validation error or bad request
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteUser"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /users/{id}</code></pre></div>
+    <div class="method-summary">Delete a user (<span class="nickname">deleteUser</span>)</div>
+    <div class="method-notes">Deletes a user by their ID.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the user to delete format: int64</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    User deleted successfully, no content returned
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllUsers"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /users</code></pre></div>
+    <div class="method-summary">Retrieve all users (<span class="nickname">getAllUsers</span>)</div>
+    <div class="method-notes">Fetches a list of all registered HDB users.</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#HDBUser">HDBUser</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "phoneNumber" : "+6512345678",
+  "fullName" : "John Doe",
+  "id" : 456,
+  "email" : "johndoe@example.com",
+  "username" : "johndoe"
+}, {
+  "phoneNumber" : "+6512345678",
+  "fullName" : "John Doe",
+  "id" : 456,
+  "email" : "johndoe@example.com",
+  "username" : "johndoe"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    List of users
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateUser"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /users/{id}</code></pre></div>
+    <div class="method-summary">Update an existing user (<span class="nickname">updateUser</span>)</div>
+    <div class="method-notes">Updates user details for the specified user ID.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; ID of the user to update format: int64</div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#HDBUser">HDBUser</a> (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#HDBUser">HDBUser</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "phoneNumber" : "+6512345678",
+  "fullName" : "John Doe",
+  "id" : 456,
+  "email" : "johndoe@example.com",
+  "username" : "johndoe"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    User updated successfully
+        <a href="#HDBUser">HDBUser</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Favourite"><code>Favourite</code></a></li>
+    <li><a href="#FavouriteDTO"><code>FavouriteDTO</code></a></li>
+    <li><a href="#HDBUser"><code>HDBUser</code></a></li>
+    <li><a href="#ResaleHdb"><code>ResaleHdb</code></a></li>
+    <li><a href="#inline_response_200"><code>inline_response_200</code></a></li>
+    <li><a href="#inline_response_201"><code>inline_response_201</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Favourite"><code>Favourite</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Links a user and a flat as a favourite</div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Unique identifier of the favourite record format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 123</span></div>
+<div class="param">userId </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> ID of the user who favourited the flat format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 456</span></div>
+<div class="param">flatId </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> ID of the flat marked as favourite format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 789</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="FavouriteDTO"><code>FavouriteDTO</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Data Transfer Object for user-specific favourite flats</div>
+    <div class="field-items">
+      <div class="param">flatId </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> ID of the favourite flat format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 789</span></div>
+<div class="param">flatName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name or description of the flat </div>
+          <div class="param-desc"><span class="param-type">example: Block 123, Street ABC</span></div>
+<div class="param">addedDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Date when the flat was added to favourites format: date-time</div>
+          <div class="param-desc"><span class="param-type">example: 2026-05-01T14:30Z</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="HDBUser"><code>HDBUser</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Represents a user in the HDB system</div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Unique user identifier format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 456</span></div>
+<div class="param">username </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Username of the user </div>
+          <div class="param-desc"><span class="param-type">example: johndoe</span></div>
+<div class="param">email </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Email address of the user format: email</div>
+          <div class="param-desc"><span class="param-type">example: johndoe@example.com</span></div>
+<div class="param">fullName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Full name of the user </div>
+          <div class="param-desc"><span class="param-type">example: John Doe</span></div>
+<div class="param">phoneNumber (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Contact phone number </div>
+          <div class="param-desc"><span class="param-type">example: +6512345678</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ResaleHdb"><code>ResaleHdb</code></a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Represents a resale HDB record</div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Unique identifier of the resale record format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 101</span></div>
+<div class="param">block </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Block number or name </div>
+          <div class="param-desc"><span class="param-type">example: 123A</span></div>
+<div class="param">streetName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Street name of the HDB flat </div>
+          <div class="param-desc"><span class="param-type">example: Example Street</span></div>
+<div class="param">flatType </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of flat (e.g., 3-room, 4-room) </div>
+          <div class="param-desc"><span class="param-type">example: 4-room</span></div>
+<div class="param">floorArea </div><div class="param-desc"><span class="param-type"><a href="#float">Float</a></span> Floor area in square meters format: float</div>
+          <div class="param-desc"><span class="param-type">example: 90.5</span></div>
+<div class="param">resalePrice </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Resale price in SGD </div>
+          <div class="param-desc"><span class="param-type">example: 350000</span></div>
+<div class="param">resaleDate </div><div class="param-desc"><span class="param-type"><a href="#date">date</a></span> Date of resale transaction format: date</div>
+          <div class="param-desc"><span class="param-type">example: Wed Apr 15 00:00:00 GMT 2026</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200"><code>inline_response_200</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">message (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Favourite deleted successfully</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_201"><code>inline_response_201</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">message (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Favourite added successfully</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
