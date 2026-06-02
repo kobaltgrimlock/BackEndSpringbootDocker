@@ -27,7 +27,19 @@ API Documentation folder
 https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Authentication%20API%20Documentation/
 
 ##Salesperson API
-https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Salesperson%20API%20Documentation/
+https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Salesperson%20API%20%20Documentation/
 
-##Salesperson API
+##Sales Interaction API
 https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Sales%20Interaction%20API%20documentation/
+
+##Resale HDB Documentation API
+https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Resale%20HDB%20Documentation%20API/
+
+
+##HDB user API Documentation
+https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/HDB%20user%20API%20Documentation/
+
+##Favourites API Documentation
+https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Favourites%20API%20Documentation/
+
+
