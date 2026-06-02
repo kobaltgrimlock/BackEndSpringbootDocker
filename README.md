@@ -22,3 +22,12 @@ PostgreSQL Database
 Swagger UI can be accessed at:
 
 API Documentation folder
+
+##Authentication API
+https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Authentication%20API%20Documentation/
+
+##Salesperson API
+https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Salesperson%20API%20Documentation/
+
+##Salesperson API
+https://kobaltgrimlock.github.io/BackEndSpringbootDocker/API%20Documentation/Sales%20Interaction%20API%20documentation/
